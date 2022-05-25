@@ -92,6 +92,7 @@ GET       /admin/getCalendarView       Gets the Calendar data
       ["Monday","Wednesday"],
               "startTime":"00:07:00",
               "endTime":"00:09:00"
+
   }
  }
 }
@@ -115,6 +116,7 @@ Example body value:
 
 ```json
 {         
+
     "name":"Dinaol Tadesse",
      "courses":{"csc 118","calculus"},
      "calendar": { 
