@@ -9,15 +9,7 @@ for information from a web application or web server and receiving a *response*
 
 One side sends the information to the API and is called the [server](https://www.techtarget.com/searchnetworking/definition/client-server). The other side, the client, makes the requests and manipulates the API. The server side that provides the requested information, or resources, is the API endpoint.
 
-```mermaid
-    graph LR;
-        Client> Client]-->| request | Server(<img src='https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png' width='120' height='120' /> Server)
-        Server -.->|response|Client
-        Server -->|request|Database(<img src='https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png' width='120' height='120' /> Database)
-        Database -.->|response|Server
-        Server-.->|response|Test(<img src='https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png' width='120' height='120' /> Test)
-        Test-->|request|Server
-```
+![Project container structure](/Doc/img/projectContainersSetup.PNG)
 
 In our case the client is going to be **Student, Mentor and Admin** as seen in the class diagram.
 
