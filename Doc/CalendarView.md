@@ -80,18 +80,18 @@ GET       /admin/getCalendarView       Gets the Calendar data
 
 ```json
 {
-  name:"Dinaol Tadesse",
-     courses:{"csc 118","calculus"},
-     calendar: {
+    "name":"Dinaol Tadesse",
+     "courses":{"csc 118","calculus"},
+     "calendar": {
     { 
-     {"Tuesday","Thursday"},
-              startTime:"00:12:00",
-              endTime:"00:13:00"
+     ["Tuesday","Thursday"],
+              "startTime":"00:12:00",
+              "endTime":"00:13:00"
    },
            { 
-      {"Monday","Wednesday"},
-              startTime:"00:07:00",
-              endTime:"00:09:00"
+      ["Monday","Wednesday"],
+              "startTime":"00:07:00",
+              "endTime":"00:09:00"
   }
  }
 }
@@ -115,18 +115,18 @@ Example body value:
 
 ```json
 {         
- name:"Dinaol Tadesse",
-     courses:{"csc 118","calculus"},
-     calendar: { 
+    "name":"Dinaol Tadesse",
+     "courses":{"csc 118","calculus"},
+     "calendar": { 
    { 
-    {"Tuesday","Thursday"},
-            startTime:"00:12:00",
-            endTime:"00:13:00"
+    ["Tuesday","Thursday"],
+            "startTime":"00:12:00",
+            "endTime":"00:13:00"
   },
         { 
-   {"Monday","Wednesday"},
-            startTime:"00:07:00",
-            endTime:"00:09:00"
+   ["Monday","Wednesday"],
+            "startTime":"00:07:00",
+            "endTime":"00:09:00"
   }
  }
 }
@@ -159,18 +159,18 @@ Example body value:
 
 ```json
 {        
- name:"Dinaol Tadesse",
-    courses:{"CSC 118","Data Structures"},
-    calendar: { 
+    "name":"Dinaol Tadesse",
+    "courses":{"CSC 118","Data Structures"},
+    "calendar": { 
   { 
-   {"Tuesday","Thursday"},
-            startTime:"00:12:00",
-            endTime:"00:13:00"
+   ["Tuesday","Thursday"],
+            "startTime":"00:12:00",
+            "endTime":"00:13:00"
   },
         { 
-   {"Monday","Wednesday"},
-            startTime:"00:07:00",
-            endTime:"00:09:00"
+   ["Monday","Wednesday"],
+            "startTime":"00:07:00",
+            "endTime":"00:09:00"
   }
  }
 }
@@ -271,18 +271,18 @@ No Parameters needed.
 
 ```json
 {         
- name:"Dinaol Tadesse",
-    courses:{"csc 118","calculus"},
-    calendar: { 
+    "name":"Dinaol Tadesse",
+    "courses":{"csc 118","calculus"},
+    "calendar": { 
   { 
-   {"Tuesday","Thursday"},
-             startTime:"00:12:00",
-             endTime:"00:13:00"
+   ["Tuesday","Thursday"],
+             "startTime":"00:12:00",
+             "endTime":"00:13:00"
   },
            { 
-      {"Monday","Wednesday"},
-              startTime:"00:07:00",
-              endTime:"00:09:00"
+      ["Monday","Wednesday"],
+              "startTime":"00:07:00",
+              "endTime":"00:09:00"
    }
  }
 }
@@ -306,18 +306,18 @@ Example body value:
 
 ```json
 {        
-  name:"Dinaol Tadesse",
-     courses:{"csc 118","calculus"},
-     calendar: { 
+    "name":"Dinaol Tadesse",
+     "courses":{"csc 118","calculus"},
+     "calendar": { 
    { 
-    {"Tuesday","Thursday"},
-             startTime:"00:12:00",
-              endTime:"00:13:00"
+    ["Tuesday","Thursday"],
+             "startTime":"00:12:00",
+              "endTime":"00:13:00"
   },
         { 
-      {"Monday","Wednesday"},
-            startTime:"00:07:00",
-            endTime:"00:09:00"
+      ["Monday","Wednesday"],
+            "startTime":"00:07:00",
+            "endTime":"00:09:00"
   }
  }
 }
@@ -419,19 +419,19 @@ No Parameters needed.
 
 ```json
 {         
-name:"Dinaol Tadesse",
-     courses:{"csc 118","calculus"},
-     calendar: 
+    "name":"Dinaol Tadesse",
+    "courses":{"csc 118","calculus"},
+    "calendar": 
   { 
    { 
-    {"Tuesday","Thursday"},
-            startTime:"00:12:00",
-            endTime:"00:13:00"
+    ["Tuesday","Thursday"],
+            "startTime":"00:12:00",
+            "endTime":"00:13:00"
    },
            { 
-      {"Monday","Wednesday"},
-            startTime:"00:07:00",
-            endTime:"00:09:00"
+      ["Monday","Wednesday"],
+            "startTime":"00:07:00",
+            "endTime":"00:09:00"
    }
  }
 }
