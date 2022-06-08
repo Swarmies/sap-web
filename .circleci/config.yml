@@ -9,50 +9,65 @@ orbs:
     python: circleci/python@1.5.0
 
 jobs:
+    build-db:
+        docker:
+            - image: kirubeltadesse/db-1.0
+              environment:
+                POSTGRES_DB: postgres
+                POSTGRES_USER: postgres
+                POSTGRES_PASSWORD: postgres
+              auth:
+                username: kirubeltadesse
+                password: $DOCKERHUB_PASSWORD
+        steps:
+            - checkout
+            # - run: sudo apt-get update
+            # - run: sudo apt-get install postgresql-client
+            # - run: whoami
+            # - run: |
+            #     psql \
+            #     -d $TEEST_DATABASE URL \        
+            #     -c "CREATE TABLE test (name char(25));"
+            # - run: |
+            #     psql \
+            #     -d $TEST_DATABASE_URL \
+            #     -c "INSERT INTO test VALUES ('Dinaol'), ('Biruk'), ('Kirubel'), ('Getnet');"
+
     build-svc:
         # Primary container image where all commands run
         docker:
             - image: kirubeltadesse/sapsvc-1.0              
               auth:
                 username: kirubeltadesse
-                password: 8725+08Ki
+                password: $DOCKERHUB_PASSWORD
             #   environment:
             #     TEST_DATABASE_URL: postgresql://postgres@localhost/cicle_test
-
-            # - image: cimg/postgres
-            #   environment:
-            #     POSTGRES_USER: postgres
-
-
         steps:
             - checkout
-            - run: sudo apt-get update
-        #     - run: sudo apt-get install postgresql-client
-        #     - run: whoami
-        #     - run: python manage.py migrate
-        #     - run: python manage.py runserver 0.0.0.0:8000
-        #     - run: curl localhost:8000
-        #     - run: |
-        #         psql \
-        #         -d $TEEST_DATABASE URL \        
-        #         -c "CREATE TABLE test (name char(25));"
-        #     - run: |
-        #         psql \
-        #         -d $TEST_DATABASE_URL \
-        #         -c "INSERT INTO test VALUES ('Dinaol'), ('Biruk'), ('Kirubel'), ('Getnet');"
-         
+            # - run: python manage.py migrate
+            # - run: python manage.py runserver 0.0.0.0:8000
+            # - run: curl localhost:8000
+
     build-ui:
         docker:
             - image: kirubeltadesse/sapui-1.0 # using image from dockerhub 
         
         steps:
             - checkout # check out the code in the project directory
-            - run: npm start 
-            - run: curl localhost:3000
+            # https://circleci.com/docs/2.0/env-vars/ use environment variable to run the commends
+            # - run:
+                # name: Change to make direcotry
+                # command: cd /frontend
+            # - run: npm start 
+            # - run: curl localhost:3000
 
 workflows:
     container-build: # This is the name of the workflow, feel free to change it to better match your workflow.
     # Inside the workflow, you define the jobs you want to run.
         jobs:
-            - build-svc
-            - build-ui
+            - build-db:
+                context: CONTEXT_DOCK
+            - build-svc:
+                context: CONTEXT_DOCK
+            - build-ui:
+                context: CONTEXT_DOCK
