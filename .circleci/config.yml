@@ -21,7 +21,10 @@ jobs:
                 password: $DOCKERHUB_PASSWORD
         steps:
             - checkout
-            # - run: sudo apt-get update
+            - run: 
+                name: Update
+                command: |
+                   sudo apt-get update
             # - run: sudo apt-get install postgresql-client
             # - run: whoami
             # - run: |
