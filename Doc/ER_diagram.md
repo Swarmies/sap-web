@@ -1,21 +1,23 @@
-# This diagram represents the ER relationship diagram among the entities below
+# ER Diagram 
 
-# In order to understand the cardinality, please refer to the mermaid documentation
+# Entities are:
+#    USER | STUDENT | MENTOR | SIGN IN | EVENTS | CALENDAR 
+#    The USER can be either a student, a mentor or admin 
+#    which is assigned by the 'role' attribute in the user table.
+#    Events is transaction that is posted when a student is
+#    booked for mentorship program.
+#  
 
-# https://mermaid-js.github.io/mermaid/#/entityRelationshipDiagram
+
 
 ```mermaid
   erDiagram
-          USER ||--|| STUDENT : is
+          USER ||--|| STUDENT : is 
           USER ||--|| MENTOR : is
-          USER ||--|| ADMIN : is
           USER ||--|| SIGNIN : has
           STUDENT ||--o{ EVENTS : posts
           STUDENT ||--|| CALENDAR : has
           MENTOR ||--|| CALENDAR : has
-          MENTOR ||--|{ WEEKDAYS : tutors
-          ADMIN ||--o{ EVENTS : posts
-          CALENDAR ||--|{ WEEKDAYS: has
         USER {
             int user_id PK
             string fullName
@@ -23,6 +25,7 @@
             string email
             string role
             string userName
+            string password
         }
         STUDENT {
             int student_id PK
@@ -31,17 +34,13 @@
         MENTOR {
             int mentor_id PK
             string user_id FK
-            string course
-        }
-        ADMIN {
-             int admin_id PK
-             string user_id FK
+            string courses
         }
         SIGNIN {
             int signIn_id PK
             string user_id FK
             string userName
-            string password
+            string password    
         }
         EVENTS {
             int events_id PK
@@ -52,12 +51,10 @@
         }
         CALENDAR {
             int calendar_id PK
-            int weekday_id FK
-        }
-        WEEKDAYS {
-            int weekday_id PK
-            int mentor_id FK
+            int user_id FK
+            dateFormat assignedDate
             dateFormat startDate
             dateFormat endDate
         }
+        
 ```
